@@ -1,0 +1,430 @@
+\documentclass[12pt]{article}
+%\topmargin -0.5in \textheight 600pt\textwidth 465pt \oddsidemargin
+%10pt\evensidemargin 10pt
+\topmargin -0.8in \textheight 650pt\textwidth 490pt \oddsidemargin
+-8pt\evensidemargin 0pt
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage[authoryear,nonamebreak,bibstyle]{natbib}
+%\usepackage{geometry, pdflscape}
+\usepackage{footnote}
+\makesavenoteenv{tabular}
+\makesavenoteenv{table}
+%\usepackage{rotating}
+%\usepackage[onehalfspacing]{setspace}
+\usepackage[shortlabels]{enumitem}
+\usepackage{multirow}
+\usepackage[title, toc, page]{appendix}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{cancel}
+\usepackage{soul}
+\usepackage{mathrsfs}
+%\usepackage[toc,page]{appendix}
+
+\usepackage{sectsty}
+\subsectionfont{\normalfont\bf}
+
+\begin{document}
+\baselineskip=.22in\parindent=30pt
+
+\newtheorem{tm}{Theorem}
+\newtheorem{dfn}{Definition}
+\newtheorem{lma}{Argument}
+\newtheorem{assu}{Assumptions}
+\newtheorem*{assum}{Assumptions}
+\newtheorem{prop}{Proposition}
+\newtheorem{cro}{Corollary}
+\newtheorem{example}{Example}
+\newcommand{\exm}{\begin{example}}
+\newcommand{\exmm}{\end{example}}
+\newtheorem*{theorem*}{Theorem}
+\newcommand{\cor}{\begin{cro}}
+\newcommand{\corr}{\end{cro}}
+\newtheorem{exa}{Example}
+\newcommand{\ex}{\begin{exa}}
+\newcommand{\exx}{\end{exa}}
+\newtheorem{remak}{Remark}
+\newcommand{\rmk}{\begin{remak}}
+\newcommand{\rmkk}{\end{remak}}
+\newcommand{\thm}{\begin{tm}}
+\newcommand{\nt}{\noindent}
+\newcommand{\thmm}{\end{tm}}
+\newcommand{\lm}{\begin{lma}}
+\newcommand{\lmm}{\end{lma}}
+\newcommand{\ass}{\begin{assu}}
+\newcommand{\asss}{\end{assu}}
+\newcommand{\assm}{\begin{assum}}
+\newcommand{\assmm}{\end{assum}}
+\newcommand{\df}{\begin{dfn}  }
+\newcommand{\dff}{\end{dfn}}
+\newcommand{\prp}{\begin{prop}}
+\newcommand{\prpp}{\end{prop}}
+\newcommand{\bqu}{\sloppy \small \begin{quote}}
+\newcommand{\equ}{\end{quote} \sloppy \large}
+\newcommand\cites[1]{\citeauthor{#1}'s\ (\citeyear{#1})}
+\newcommand{\eq}{\begin{equation}}
+\newcommand{\eqq}{\end{equation}}
+\newtheorem{claim}{\it Claim}
+\newcommand{\cl}{\begin{claim}}
+\newcommand{\cll}{\end{claim}}
+\newcommand{\bit}{\begin{itemize}}
+\newcommand{\eit}{\end{itemize}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\bcen}{\begin{center}}
+\newcommand{\ecen}{\end{center}}
+\newcommand{\fn}{\footnote}
+\newcommand{\ds}{\begin{description}}
+\newcommand{\dss}{\end{description}}
+\newcommand{\prf}{\begin{proof}}
+\newcommand{\prff}{\end{proof}}
+\newcommand{\cs}{\begin{cases}}
+\newcommand{\css}{\end{cases}}
+\newcommand{\ml}{\item}
+\newcommand{\lb}{\label}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\tra}{\twoheadrightarrow}
+\newcommand{\tlra}{\relbar\joinrel\twoheadrightarrow}
+\newcommand*{\supp}{\operatornamewithlimits{sup}\limits}
+\newcommand*{\inff}{\operatornamewithlimits{inf}\limits}
+\newcommand{\nf}{\normalfont}
+\renewcommand{\Re}{\mathbb{R}}
+\newcommand{\Ze}{\mathbb Z}
+\newcommand*{\mmax}{\operatornamewithlimits{max}\limits}
+\newcommand*{\mmin}{\operatornamewithlimits{min}\limits}
+\newcommand*{\argmax}{\operatornamewithlimits{arg max}\limits}
+\newcommand*{\argmin}{\operatornamewithlimits{arg min}\limits}
+
+\newcommand{\CR}{\mathcal R}
+\newcommand{\CC}{\mathcal C}
+\newcommand{\CT}{\mathcal T}
+\newcommand{\GG}{{\cal G}}
+
+
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
+\newtheorem{einnercustomthm}{Extended Theorem}
+\newenvironment{ecustomthm}[1]
+  {\renewcommand\theeinnercustomthm{#1}\einnercustomthm}
+  {\endeinnercustomthm}
+
+\newcommand{\red}{\textcolor{red}}
+\newcommand{\blue}{\textcolor{blue}}
+\newcommand{\purple}{\textcolor{purple}}
+\newcommand{\mred}[1]{\color{red}{#1}\color{black}}
+\newcommand{\mblue}[1]{\color{blue}{#1}\color{black}}
+\newcommand{\mpurple}[1]{\color{purple}{#1}\color{black}}
+\makeatletter
+\newcommand{\customlabel}[2]{%
+\protected@write \@auxout {}{\string \newlabel {#1}{{#2}{}}}}
+\makeatother
+%
+
+\def\qed{\hfill\vrule height4pt width4pt
+depth0pt}
+\def\reff #1\par{\noindent\hangindent =\parindent
+\hangafter =1 #1\par}
+\def\title #1{\begin{center}
+{\Large {\bf #1}}
+\end{center}}
+\def\author #1{\begin{center} {\large #1}
+\end{center}}
+\def\date #1{\centerline {\large #1}}
+\def\place #1{\begin{center}{\large #1}
+\end{center}}
+
+\def\date #1{\centerline {\large #1}}
+\def\place #1{\begin{center}{\large #1}\end{center}}
+\def\intr #1{\stackrel {\circ}{#1}}
+\def\R{{\rm I\kern-1.7pt R}}
+ \def\N{{\rm I}\hskip-.13em{\rm N}}
+ \newcommand{\cprod}{\Pi_{i=1}^\ell}
+\let\Large=\large
+\let\large=\normalsize
+
+%==============================================
+%==============================================
+
+\begin{titlepage}
+\def\thefootnote{\fnsymbol{footnote}}
+\vspace*{1.1in}
+
+\title{Measure Theory- OSE Bootcamp 2019}
+
+ %\vskip 2.50em
+
+\author{Aniruddha Ghosh\fn{Department of Economics, Johns Hopkins University, Baltimore, MD 21218.
+The author acknowledges Prof. Ali Khan for renewing his interest in measure theory.}}
+
+\vskip 1.00em
+
+\date{\today}
+
+\vskip 2.75em
+
+
+\baselineskip=.18in
+
+\noindent Contains answers to the exercises on Measure Theory, taught by Jan Ertl as a part of the OSE Lab Summer Camp 2019. 
+
+
+
+
+\end{titlepage}
+
+%==============================================
+
+\tableofcontents
+\pagebreak
+
+\setstretch{1.3}
+\setcounter{footnote}{0}
+\setcounter{secnumdepth}{5}
+%==============================================
+
+
+%%%%----------------------------------------------------------------------------%%%%
+\section{Chapter 1}
+\subsection{Exercise 1.3}
+
+\begin{enumerate}
+	\item No, $\mathcal{G}_1$ is not an algebra. $\mathcal{G}_1$ is not closed under complements. For a given $a \in \mathbb{R}$ , let $A$ be defined as $A = (-a, a)$ which is an open set in $\mathbb{R}$. Then,  $A^c = (-\infty,-a]\cup [a,\infty)$ is not an open set in $\mathbb{R}$. In fact, it is closed since any sequence in this set, converges to a point in the set itself (contains all its limit points). Therefore, condition (ii) is violated and hence, this is not an algebra. Moreover, this is not a $\sigma$-algebra.\\ \vskip 1cm
+	
+	
+	\item Yes, $\mathcal{G}_2$ is an algebra. To show that $\mathcal{G}_2$ is an algebra, we sequentially follow the steps. For the configuration of sets provided here, pick \textit{a=b} and one gets  $(a,b] = \emptyset \in \mathcal{G}_2$ . Next, we show that  $\mathcal{G}_2$ is also closed under complements and finite unions. For $a, b \in \mathbb{R}$, for any interval of the form  $(a,b]^c = (-\infty, a] \cup (b, \infty), (-\infty, b]^c = (b, \infty),  (a, \infty)^c = (-\infty, a]  \in \mathcal{G}_2$. Furthermore, $(-\infty, b]^c = (b, \infty) \in \mathcal{G}_2$, and $(a, \infty)^c = (-\infty, a] \in \mathcal{G}_2$. Moreover, $\mathcal{G}_2$ is closed under finite unions. A finite union of intervals of the form $(a, b], (-\infty, b],$ and $(a, \infty)$ will still yield us a finite union of intervals of the same form. Therefore, $\mathcal{G}_2$ is an algebra. However, by definition this 
+	$\mathcal{G}_2$ is a finite union of the intervals of the form expressed above. Therefore, a countable union does not belong to $\mathcal{G}_2$. Hence, it is not a $\sigma$-algebra.\vskip 1cm
+	
+	\item Yes, it is both an algebra and a $\sigma$-algebra. It is easy to follow this from (2.) above. The only addition is that $\mathcal{G}_3$ is now a countable union of intervals rather than finite unions, and therefore, admits the requirement for $\mathcal{G}_3$ to be a $\sigma$-algebra. 
+	
+
+\end{enumerate}
+
+
+\subsection{Exercise 1.7}
+
+As Jan discussed in class, the empty set and the set itself is the smallest algebra since it follows all the properties that an algebra has to satisfy. Similarly, the power set is the largest sigma algebra and it satisfies all the requirements one needs an algebra and a $\sigma$-algebra to satisfy.  \vskip 2cm
+	
+	
+\subsection{Exercise 1.10}	
+
+We are given that $\{S_{\alpha}\}$ be a family of $\sigma$-algebras on $X$. We need to show that $\cap_{\alpha} S_{\alpha}$ is also a $\sigma$-algebra.
+
+\begin{enumerate}
+
+\item	Trivial to see that $\emptyset \in \cap_{\alpha} S_{\alpha}$. The intersection of ${S}_{\alpha}$ contains $\emptyset$ because it is an intersection of $\sigma$-algebras. By definition, any sigma algebra contains $\emptyset$.
+
+\item Now we show that $\cap_{\alpha} S_{\alpha}$ is closed under complements.
+
+Let $X \in \cap_{\alpha} S_{\alpha}$. By definition, $X \in S_{\alpha}$ for all $\alpha$, i.e, \textit{X} is in $\{S_{\alpha}\}$ for all $\alpha$. Since, each $S_{\alpha}$ is a $\sigma$-algebra, the complement of $X^c \in S_{\alpha}$ for all $\alpha$. Therefore, $X^c \in \cap_{\alpha} S_{\alpha}$. Hence, $\cap_{\alpha} S_{\alpha}$ is closed under complements.
+
+\item Finally, we show that $\cap_{\alpha} S_{\alpha}$ is closed under countable unions.
+
+Let $X_1, X_2,... \in \cap_{\alpha} S_{\alpha}$. For illustration, ${\alpha}$ could belong to the set of natural numbers. Therefore, $X_1, X_2, ... \in S_{\alpha}$ for every $\alpha$. Since, each $S_{\alpha}$ is a $\sigma$-algebra, which implies that countable union of $\cup_{n=1}^{\infty} X_n \in S_{\alpha}$ for every $\alpha$. Therefore, $\cup_{n=1}^{\infty} X_n \in \cap_{\alpha} S_{\alpha}$,i.e,belongs to the intersection of $\cap_{\alpha} S_{\alpha}$  which shows that $\cap_{\alpha} S_{\alpha}$ is closed under countable unions.
+
+
+\end{enumerate}
+
+\subsection{Exercise 1.22}
+\begin{prop}
+	$\mu$ is monotone, i.e, if $A,B \in \mathcal{S}$, $A \subset B$, then $\mu(A) \leq \mu(B)$.
+\end{prop}
+\begin{proof}
+	Following the proofs outlined in the notes, we can write  $B = (A) \cup (B \cap A^c) $. Using the measure property, we have $\mu(B) =\mu(A)+ \mu(B \cap A^c)$. Since a measure is always non-negative, we have, $\mu(A) \leq \mu(B)$.
+\end{proof}
+
+\begin{prop}
+	$\mu$ is countably subadditive: if $\{A_i\}_{i=1}^{\infty} \subset \mathcal{S}$, then $\mu(\cup_{i=1}^{\infty} A_i) \leq \sum_{i=1}^{\infty} \mu(A_i)$.
+\end{prop}
+\begin{proof}
+	Define $A = \cup_{i=1}^{\infty} A_i$ and then sequentially we let $\{B_i\}_{i=1}^{\infty}$ to be defined as  $B_1 = A_1$, $B_2 = A_2 \cap A_1^c$ $\ldots$ $B_i = A_i \cap (\cup_{n=1}^{i-1} A_i)^c$. First, by the way of definition, $B_i \cap B_j = \emptyset$ for all $i \ne j$. Moreover, it can be shown that $A\subseteq \cup_{i=1}^{\infty} B_i$ and $ \cup_{i=1}^{\infty} B_i \subseteq A$, therefore, $A=\cup_{i=1}^{\infty} B_i$. Finally, $B_i \subset A_i$. By proposition 1, we have that $\mu(B_i) \leq \mu(A_i)$. Hence by appealing to disjointness and Proposition 1,
+	\begin{equation}
+	\mu(\cup_{i=1}^{\infty} B_i)=\mu(A) = \sum_{i=1}^{\infty} \mu(B_i) \leq \sum_{i=1}^{\infty} \mu(A_i)
+	\end{equation}
+
+\end{proof}
+
+\subsection{Exercise 1.23}
+
+Let $(X,\mathcal{S}, \mu)$ be a measure space and $B \in \mathcal{S}$. Let $\lambda$ be a mapping from a set $\mathcal{S}$ to $R_{+}$. In particular, $\lambda(A) = \mu(A \cap B)$.
+\begin{prop}
+	$\lambda(\emptyset) = 0$
+\end{prop}
+It is easy to see that the intersection of an empty set with $B$ is the empty set itself. In particular and by definition it follows, $\lambda(\emptyset) = \mu(\emptyset \cap B) = \mu (\emptyset) = 0$.
+
+\begin{prop}
+	$\lambda(\cup_{i=1}^{\infty} A_i) = \sum_{i = 1}^{\infty} \lambda(A_i)$ for any $\{A_i\}_{i=1}^{\infty} \subset \mathcal{S}$ such that $A_i \cap A_j = \emptyset$ for all $i \ne j$.
+\end{prop}
+
+This is similar in spirit to the question above.\\
+For any  $\{A_i\}_{i=1}^{\infty} \subset \mathcal{S}$ such that $A_i \cap A_j = \emptyset$ for all $i \ne j$, we have
+\begin{align}
+\lambda(\cup_{i=1}^{\infty} A_i) &= \mu((\cup_{i=1}^{\infty} A_i) \cap B)&& \text{(By def.)} \\ 
+&= \mu(\cup_{i=1}^{\infty} (A_i \cap B)) && \text{(associativity)} \\
+&= \sum_{i=1}^{\infty} \mu(A_i \cap B) = \sum_{i=1}^{\infty} \lambda(A_i \cap B) && \text{(By disjointness and additivity)} 
+\end{align}
+
+
+\subsection{Exercise 1.26 (Continuous from below)}
+
+Let $A = \cap_{n=1}^{\infty} A_n$. We proceed to give a proof of (ii). \vskip 0.5cm
+
+Let  $B_n = A_1 - A_n$ for $n \in \mathbb{N}$ and let $B = \cup_{n=1}^{\infty} B_n$. Now, with $B$ being the infinite union of such sets, it is easy to see that they form a collection of an increasing sequence, i.e., $\{B_n\}_{n=1}^{\infty}$ is an increasing sequence.
+
+Therefore, 
+\begin{align*}
+\mu(A_1) - \mu(A) &= \mu(A_1 - A) \\
+&= \mu(B)  \\
+&= \mu(\cup_{n=1}^{\infty} B_n) \\
+&= \lim_{n \rightarrow \infty} \mu(B_n)\\
+&= \lim_{n \rightarrow \infty} (\mu(A_1) - \mu(A_n))\\
+&= \mu(A_1) - \lim_{n \rightarrow \infty}  \mu(A_n))
+\end{align*}
+
+Hence, since $\mu(A_1)$ is a constant, eliminating it we have our desired statement.
+
+
+\section{Chapter 2}
+
+\subsection{Exercise 2.10}
+
+We can easily show this by considering the statements in  Theorem 2.8. $B$ can be written as $B = (B \cap E) \cup (B \cap E^c)$. By the property of countable subadditivity, $\mu^*(B) \leq \mu^*(B \cap E) + \mu^*(B \cap E^c)$. For the conclusion to follow, therefore, we have $\mu^*(B) \geq \mu^*(B \cap E) + \mu^*(B \cap E^c)$. 
+
+\subsection{Exercise 2.14}
+
+Carath\'eodory property gives us that $\mathcal{M}$ is a $\sigma$-algebra. Not only that,  $\mathcal{M}$ is also a collection of Lebesgue measurable sets which contain all open sets. By appealing to the definition, $\mathcal{B}(X)$ is defined as the intersection of all $\sigma$-algebra containing open sets, therefore, we must have that $\mathcal{B}(X) \subset \mathcal{M}$.
+
+\section{Chapter 3}
+
+\subsection{Exercise 3.1}
+
+\begin{prop}
+	Every countable subset of the real line has Lebesgue measure $0$.
+\end{prop}
+\begin{proof}
+Let $a\in R$. Then, ${a}\subset[a-\epsilon,a+\epsilon]$ holds for every $\epsilon > 0$  and so $\lambda({a})\leq \lambda(a-\epsilon,a+\epsilon)=2\epsilon$  for every $ \epsilon > 0$. Therefore, $\lambda({a})=0$ holds for every $a\in R$. If $A=({a_{1},a_{2},...a_{n}})$ is a countable set, then it is easy to observe that  $\lambda(A)=0$.
+\end{proof}
+
+\subsection{Exercise 3.7}
+
+To prove, $1=2=3=4$.
+\begin{enumerate}
+	\item $\{x \in X : f(x) < a \} \in \mathcal{M}$
+	\item $\{x \in X : f(x) \geq a \} \in \mathcal{M}$
+	\item $\{x \in X : f(x) > a \} \in \mathcal{M}$
+	\item $\{x \in X : f(x) \leq a \} \in \mathcal{M}$
+\end{enumerate}
+\begin{proof}
+	We are given that $\{x \in X : f(x) < a \} \in \mathcal{M}$.  Using the fact that $\mathcal{M}$ is closed under complements, and the observation that  $f^{-1}([a, \infty)) = (f^{-1}(-\infty, a))^c$. we can easily see $f^{-1}([a, \infty)) \in \mathcal{M}$. Therefore, $(1) \implies (2)$. Hence, (1.) proved.\\
+	
+	We are given that  $\{x \in X : f(x) \geq a \} \in \mathcal{M}$. Using the property of inverse and some of the steps shown above in the exercises, one can express $f^{-1}((a, \infty)) = \cap_{n=1}^{\infty} f^{-1}([a - \frac{1}{n}, \infty))$. Since  $\mathcal{M}$ is closed under countable intersections and each of these belong to $\mathcal{M}$ . Therefore, we have $f^{-1}(a, \infty) \in \mathcal{M}$. Hence, $(2) \implies (3)$\\ 
+	
+	Similar to 1 above. Hence, $(3) \implies (4)$. \\
+	
+	Similar to 2 above. All one needs to do is to replace is to observe that $f^{-1}((-\infty, a)) = \cap_{n=1}^{\infty} f^{-1}((-\infty, a + \frac{1}{n}))$. Rest of the proof follows 2..
+\end{proof}
+
+
+\subsection{Exercise 3.10}
+
+Given 2 and 4, we proceed to prove 1.
+\begin{enumerate}
+	\item Take 4 first. We have, $F(f(x) + g(x)) = f(x) + g(x)$. By continuity and application of Theorem 3.9 we have $F$ to be continuous and measurable. Therefore, $f + g$ is measurable.
+	
+	\item Similarly, we have $F(f(x) + g(x)) = f(x)g(x)$. Again, in the same spirit as above we have $f \cdot g$ is measurable.
+	
+	\item  Now, given that  $f$ and $g$ are measurable functions on $(X,\mathcal{M})$ and by appealing to closedness of $\mathcal{M}$ under countable intersectons, we have that $\max(f(x), g(x))$ is measurable.
+	\item Follows from the proof above with the just an inequality twist.
+	\item Again $\{x \in X : |f(x)| > a \} = \{x \in X : f(x) < -a \} \cup \{x \in X : f(x) > a \}$. $\mathcal{M}$ is closed under countable unions, and since both are contained in $\mathcal{M}$, therefore, $\{x \in X : |f(x)| > a \} \in \mathcal{M}$, so that $|f(x)|$ is measurable.
+\end{enumerate}
+
+\subsection{Exercise 3.17 (Uniform convergence)}
+
+	This follows exactly from notes.
+	Given $f$ is  bounded and we take an $\epsilon > 0$. Owing to its boundedness, there exists an $M \in \mathbb{R}$ such that $|f(x)| \leq M$ for all $x \in X$. Hence, $x \in E^M_i$ for some $i$ and all $x \in X$. Moreover, for an $N \in \mathbb{R}$ and $N \geq M$ we have $\frac{1}{2^N} < \epsilon$. Therefore, $n \geq N$, $|| s_n(x) - f(x) || < \epsilon$ for all $x \in X$. Hence, proved.
+
+
+\section{Chapter 4}
+
+\subsection{Exercise 4.13}
+
+All we need to show here is that $\int_E f^+ d\mu$ and $\int_E f^- d\mu$ are finite. And by prop 4.5 it follows.
+
+Firstly, we have $||f|| = f^+ + f^-$ and are non-negative. Further, $||f|| < M$ on $E$, then $0 \leq f^+ < M$ and $0 \leq f^- < M$ on $E$.
+
+Finally, by Proposition 4.5, we derive,
+\begin{align*}
+&\int_E f^+ d\mu < M \mu(E) < \infty \\
+&\int_E f^- d\mu < M \mu(E) < \infty \\
+\end{align*}
+
+
+\subsection{Exercise 4.14}
+One can easily prove this otherwise using contrapositive and arrive at a contradiction where  $f \not\in \mathscr{L}^1(\mu,E)$.
+
+\subsection{Exercise 4.15}
+
+Again appealing to Proposition 4.7 and by appealing to definition of Lebesgue integral, we will show
+\begin{equation}
+\int_E fd\mu \leq \int_E g d\mu
+\end{equation}
+
+\vskip 1cm
+We have $f,g \in \mathscr{L}^1(\mu,E)$. We use simple functions to progress further. We define the set of simple functions $B(f) = \{ z : 0 \leq z \leq f$\}. WLOG, $f \leq g$. Appealing to 4.7, we have $B(f^+) \subset B(g^+)$ and $B(g^-) \subset B(f^-)$. Therefore, $ \int_E f^+ d\mu \leq \int_E g^+ d\mu$ and $\int_E f^- d\mu \geq \int_E g^- d\mu$. Hence,
+\begin{equation}
+\int_E fd\mu = \int_E (f^+ d\mu -  f^- d\mu) \leq \int_E (g^+ d\mu -g^- d\mu) = \int_E g d\mu
+\end{equation}
+Finally,
+\begin{equation}
+\int_E fd\mu \leq \int_E g d\mu
+\end{equation}
+
+
+
+\subsection{Exercise 4.16}
+
+We start with a simple function $s(x) = \sum_{i=1}^{N} c_i \chi_{E_{i}}$, where $E_i \in \mathcal{M}$. Also, we pickup a set $A$ s.t. $A \subset E \in \mathcal{M}$. By the monotonicity of measures, we have that $\mu(A \cap E_i) \leq \mu(E \cap E_i)$ for all $i$. Hence, we have,
+\begin{equation} \label{ex1}
+\int_A  sd\mu \leq  \int_E s d\mu
+\end{equation}
+
+Appealing to Definition 4.2, we have by Equation (\ref{ex1}) that,
+\begin{equation}
+\int_A f d\mu \leq \int_E f d\mu 
+\end{equation}
+
+We can easily establish by virtue of properties of $f$ that $\int_E f d\mu <\infty$. Finally, it follows that $\int_A f d\mu < \infty$, which in turn implies $\int_A f^+ d\mu < \infty$ and $\int_A f^{-} d\mu < \infty$, so that $f \in \mathscr{L}^1 (\mu, A)$.
+
+\subsection{Exercise 4.21}
+Given Proposition 4.6, we have,
+\begin{equation}
+\int_{A-B} f d\mu = 0.
+\end{equation}
+Recall that $f^+$ and $f^-$ are non-negative $\mathcal{M}$-measurable functions because $f \in \mathscr{L}^1$. Further, by Theorem 4.19 we have that  $\mu_1(A) =  \int_A f^+ d\mu$ and $\mu_2(A) = \int_A f^- d\mu$ as measures on $\mathcal{M}$. 
+\begin{equation}
+\int_A f d\mu =  \int_A f^+ d\mu -  \int_A f^- d\mu = \mu_1(A) - \mu_2(A)
+\end{equation}
+
+Applying a tool used in exercise 1, we have $A = (A - B) \cup B$ and on further refinement, we have that $\mu_i(A) = \mu_i (B)$ for $i=1,2$ because $\mu(A - B) = 0$. Therefore,
+\begin{equation}
+\int_A f d\mu = \mu_1(B) - \mu_2(B) = \int_B f d\mu
+\end{equation}
+Henceforth,
+\begin{equation}
+\int_A f d\mu \leq \int_{B} f d\mu
+\end{equation}
+
+\section{Conclusion}
+
+This concludes the solutions for the exercises. 
+
+\end{document} 
