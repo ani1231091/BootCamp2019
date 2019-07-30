@@ -1,22 +1,8 @@
-####################################
+# makefile : makes the ABC program
+runbaby : learn_cpp.o ### by typing „make“, the makefile generates an executable denotes as „abc“ g++ ­o abc a.o b.o c.o
 
-all: dot.exec \
-     pi.exec \
-     norm.exec
-####################################
+learn_cpp.o : learn_cpp.cpp
+	g++ ­learn_cpp.cpp
 
-
-## Compile dot_prod
-dot.exec: dot_prod.cpp
-	g++ dot_prod.cpp -fopenmp -o dot.exec
-
-## compile serial_pi
-pi.exec: serial_pi.cpp
-	g++ serial_pi.cpp -fopenmp -o pi.exec
-
-## compile serial_pi
-norm.exec: normalize_vec.cpp
-	g++ normalize_vec.cpp -fopenmp -o norm.exec
-
-clean:
-	rm -rf *.exec
+clean : ### by typing „make clean“, the executable, the *.mod as well as the *.o files are deleted
+	rm *.mod *.o abc
